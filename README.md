@@ -1,4 +1,4 @@
-![alt text](https://i.ibb.co/Wft7pPt/doctor-dribbble.png "Doctors")
+![alt text](https://i.ibb.co/Wft7pPt/doctor-dribbble.png width="400" "Doctors")
 
 <center>
     <p align="center">
