@@ -3,7 +3,7 @@
 
 
 <center>
-           <center> <img src="https://i.ibb.co/Wft7pPt/doctor-dribbble.png" width="100" height="100"></center>
+    <h1>Doctors</h1>
     <p align="center">
 
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
