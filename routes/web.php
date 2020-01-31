@@ -52,7 +52,11 @@ Route::get('/backup/{code}',function($code){
     }
 
 });
-
-
+//System User
+Route::get('/system/user/index','SystemUserController@index')->name('system.user.index');
+Route::get('/system/user/create','SystemUserController@create')->name('system.user.create');
+Route::post('/system/user/store','SystemUserController@create')->name('system.user.store');
+Route::get('/system/user/add','SystemUserController@destroy')->name('system.user.destroy');
+Route::get('/system/user/add','SystemUserController@update')->name('system.user.update');
 
 });

@@ -96,7 +96,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseTest">
             <li>
-              <a href="user-profile.html">Add User</a>
+              <a href="{{route('system.user.create')}}">Add User</a>
             </li>
 			<li>
               <a href="doctor-profile.html">User List</a>
