@@ -15,4 +15,20 @@
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+GNU General Public License v3.0
+
+## Framework used
+
+* Laravel 6.0     
+* Bootstrap v4.4.1
+
+## Server Requirements
+
+* PHP >= 7.1.0
+* OpenSSL PHP Extension
+* PDO PHP Extension       
+* Mbstring PHP Extension
+* Tokenizer PHP Extension
+* XML PHP Extension    
+    
+
