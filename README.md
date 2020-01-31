@@ -1,6 +1,6 @@
 
-![](https://i.ibb.co/Wft7pPt/doctor-dribbble.png =250x250)
-
+![](https://i.ibb.co/Wft7pPt/doctor-dribbble.png)
+<img src="https://i.ibb.co/Wft7pPt/doctor-dribbble.png" width="100" height="100">
 
 <center>
     <p align="center">
