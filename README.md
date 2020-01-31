@@ -1,4 +1,5 @@
-![alt text](https://i.ibb.co/Wft7pPt/doctor-dribbble.png | width=200)
+
+![](https://i.ibb.co/Wft7pPt/doctor-dribbble.png =250x250)
 
 
 <center>
