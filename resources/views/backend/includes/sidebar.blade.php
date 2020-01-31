@@ -65,10 +65,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseDoctor">
             <li>
-              <a href="user-profile.html">Add Doctor</a>
+              <a href="{{route('doctor.create')}}">Add Doctor</a>
             </li>
 			<li>
-              <a href="doctor-profile.html">Doctor List</a>
+              <a href="{{route('doctor.show')}}">Doctor List</a>
             </li>
           </ul>
         </li>
