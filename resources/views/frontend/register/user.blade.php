@@ -11,17 +11,31 @@
 			<div class="container margin_60_35">
 				<div id="register">
 					<h1>Please register to Findoctor!</h1>
+					
 					<div class="row justify-content-center">
 						<div class="col-md-5">
-							<form>
-								<div class="box_form">
+							<form action="{{route('account.user.register')}}" method="post" enctype="multipart/form-data">
+							@csrf	
+							<p>
+						@if(Session::has("status"))
+						  {{ Session::get('status')}} 
+		 <strong><a href="{{route('account.user.login')}}">Login</a></strong>
+						@endif
+
+					
+
+
+
+</p>
+
+							<div class="box_form">
 									<div class="form-group">
 										<label>Name</label>
-										<input type="text" class="form-control" placeholder="Your name" name="Name" required>
+										<input type="text" class="form-control" value="{{old('name')}}" placeholder="Your name" name="name" required>
 									</div>
 									<div class="form-group">
 										<label>Email</label>
-										<input type="email" class="form-control" placeholder="Your email address" name="email" required>
+										<input type="email" class="form-control" value="{{old('email')}}" placeholder="Your email address" name="email" required>
 									</div>
 									<div class="form-group">
 										<label>Password</label>
@@ -30,7 +44,7 @@
 									<div id="pass-info" class="clearfix"></div>
 									<div class="checkbox-holder text-left">
 										<div class="checkbox_2">
-											<input type="checkbox" value="accept_2" id="check_2" name="check_2" checked>
+											<input type="checkbox" value="accepted" id="check_2" name="check" checked>
 											<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 										</div>
 									</div>

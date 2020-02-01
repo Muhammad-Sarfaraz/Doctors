@@ -27,9 +27,23 @@
  
  //User
  Route::get('/account/register/user','FrontendController@userCreate')->name('account.user.create');
+ 
 
  //Login
  Route::get('/account/login','FrontendController@userLogin')->name('account.user.login');
  Route::get('/account/doctor/login','FrontendController@doctorLogin')->name('account.doctor.login');
+
+});
+
+
+
+//General User
+Route::group([
+    'namespace' => 'Backend',
+    
+],function () {
+Route::post('/account/register/user/store','UserController@store')->name('account.user.register');
+Route::post('/account/register/doctor/store','UserController@store')->name('account.doctor.register');
+
 
 });

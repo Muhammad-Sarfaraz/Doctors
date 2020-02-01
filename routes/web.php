@@ -70,4 +70,10 @@ Route::post('/system/user/store','SystemUserController@create')->name('system.us
 Route::get('/system/user/add','SystemUserController@destroy')->name('system.user.destroy');
 Route::get('/system/user/add','SystemUserController@update')->name('system.user.update');
 
+
+
+
 });
+
+
+//
