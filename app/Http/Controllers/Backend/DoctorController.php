@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Doctor;
 
 class DoctorController extends Controller
 {
@@ -27,6 +28,20 @@ class DoctorController extends Controller
         return view ('backend.doctor.add');
     }
 
+
+
+
+
+
+    public function validation($request)
+   {
+    return $this->validate($request,[
+        'name' => 'required|max:255',
+        'email' => 'required|email|unique:users|max:255',
+        'password' => 'required|max:255',
+    ]);
+
+   }
     /**
      * Store a newly created resource in storage.
      *
@@ -35,8 +50,32 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validation($request);
+        //print_r($request->all());
+        $data = new Doctor;
+
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->password=bcrypt($request->password);
+        $data->city=$request->city;
+        $data->gender=$request->gender;
+        $data->experience=$request->experience;
+        $data->affiliation=$request->affiliation;
+        $data->phone=$request->phone;
+        $data->institute=$request->institute;
+        $data->specialization=$request->specialization;
+       
+        $data->save();
+
+        return back()->with('status','Successfully Registered!');
+
+
+        
     }
+
+
+
 
     /**
      * Display the specified resource.

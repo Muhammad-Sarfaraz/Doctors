@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+       return view('frontend.user.index');
     }
 
     /**
@@ -38,12 +38,6 @@ class UserController extends Controller
     ]);
 
    }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         
@@ -54,6 +48,7 @@ class UserController extends Controller
         $data->name=$request->name;
         $data->email=$request->email;
         $data->password=bcrypt($request->password);
+        
        
         $data->save();
 

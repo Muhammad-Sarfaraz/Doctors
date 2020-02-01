@@ -28,21 +28,22 @@
 				</div>
 				<!-- /col -->
 				<div class="col-lg-5 ml-auto">
+				@if(Session::has("status"))
+						  {{ Session::get('status')}} 
+		 <strong><a href="{{route('account.doctor.login')}}">Login</a></strong>
+						@endif
 					<div class="box_form">
 						<div id="message-register"></div>
 						<form method="post" action="{{route('account.doctor.register')}}" method="post" enctype="multipart/form-data">
-							<div class="row">
-								<div class="col-md-6 ">
+						@csrf	
+						
+						<div class="row">
+								<div class="col-lg-12 ">
 									<div class="form-group">
 										<input type="text" class="form-control" placeholder="Name" name="name" value="{{old('name')}}" required>
 									</div>
 								</div>
 								<!-- /row -->
-								<div class="col-md-6">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Last Name" name="lastname" value="{{old('lastname')}}" required>
-									</div>
-								</div>
 							</div>
 							<!-- /row -->
 							<div class="row">
@@ -98,16 +99,16 @@
 									<div class="form-group">
 										<select class="form-control" name="experience" >
 											<option value="">Experience</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-											<option value="9">9</option>
-											<option value="10">10</option>
+											<option value="1">1 years</option>
+											<option value="2">2 years</option>
+											<option value="3">3 years</option>
+											<option value="4">4 years</option>
+											<option value="5">5 years</option>
+											<option value="6">6 years</option>
+											<option value="7">7 years</option>
+											<option value="8">8 years</option>
+											<option value="9">9 years</option>
+											<option value="10">10 years</option>
 											<option value="above 10 years">above 10 years</option>
 										</select>
 									</div>
@@ -125,7 +126,7 @@
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Password" name="password" value="" required>
+										<input type="password" class="form-control" placeholder="Password" name="password" value="" required>
 									</div>
 								</div>
 							</div>

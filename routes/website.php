@@ -43,7 +43,23 @@ Route::group([
     
 ],function () {
 Route::post('/account/register/user/store','UserController@store')->name('account.user.register');
-Route::post('/account/register/doctor/store','UserController@store')->name('account.doctor.register');
+Route::post('/account/register/doctor/store','DoctorController@store')->name('account.doctor.register');
+
+Route::get('/user','UserController@index')->name('user.index');
+});
+
+
+
+
+
+Route::group([
+    'namespace' => 'Backend',
+    'prefix' => 'admin',
+    'middleware' => 'auth',
+    
+],function () {
+Route::post('','UserController@store')->name('account.user.register');
+Route::get('/account/register/doctor/store','DoctorController@store')->name('account.doctor.register');
 
 
 });
