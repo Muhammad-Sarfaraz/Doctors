@@ -17,23 +17,15 @@
 								<div class="box_form">
 									<div class="form-group">
 										<label>Name</label>
-										<input type="text" class="form-control" placeholder="Your name">
-									</div>
-									<div class="form-group">
-										<label>Last name</label>
-										<input type="text" class="form-control" placeholder="Your last name">
+										<input type="text" class="form-control" placeholder="Your name" name="Name" required>
 									</div>
 									<div class="form-group">
 										<label>Email</label>
-										<input type="email" class="form-control" placeholder="Your email address">
+										<input type="email" class="form-control" placeholder="Your email address" name="email" required>
 									</div>
 									<div class="form-group">
 										<label>Password</label>
-										<input type="password" class="form-control" id="password1" placeholder="Your password">
-									</div>
-									<div class="form-group">
-										<label>Confirm password</label>
-										<input type="password" class="form-control" id="password2" placeholder="Confirm password">
+										<input type="password" class="form-control" id="password1" placeholder="Your password" name="password" required>
 									</div>
 									<div id="pass-info" class="clearfix"></div>
 									<div class="checkbox-holder text-left">
@@ -46,7 +38,7 @@
 										<input class="btn_1" type="submit" value="Submit">
 									</div>
 								</div>
-								<p class="text-center"><small>Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet. Eum no atqui putant democritum, velit nusquam sententiae vis no.</small></p>
+								<p class="text-center"><small>Any Text Goes here</small></p>
 							</form>
 						</div>
 					</div>
