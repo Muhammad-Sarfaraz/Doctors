@@ -40,9 +40,14 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function login()
+    public function userLogin()
     {
-       echo "hello";
+       return view('frontend.login.userLogin');
+    }
+
+    public function doctorLogin()
+    {
+       return view('frontend.login.doctorLogin');
     }
 
 
