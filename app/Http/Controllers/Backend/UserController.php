@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
+use App\Providers\RouteServiceProvider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use App\GeneralUser;
 
@@ -16,8 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
-       return view('frontend.user.index');
+       return view('user.index');
     }
+
+
+
 
     public function login(Request $request)
     
@@ -28,9 +32,9 @@ class UserController extends Controller
         ]);
 
 
-            if(Auth::attempt(['email' =>$request->email, 'password' => $request->password]))
+            if(Auth::guard('GeneralUser')->attempt(['email' =>$request->email, 'password' => $request->password]))
             {
-                        echo "Done";
+                return redirect()->intended('/user');
             }else{
                 echo "Error";
             }

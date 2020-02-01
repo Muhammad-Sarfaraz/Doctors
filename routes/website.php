@@ -37,6 +37,11 @@
 
 
 
+
+
+
+
+
 //General User
 Route::group([
     'namespace' => 'Backend',
@@ -48,7 +53,7 @@ Route::post('/account/login/post','UserController@login')->name('user.login.post
 Route::post('/account/register/user/store','UserController@store')->name('account.user.register');
 Route::post('/account/register/doctor/store','DoctorController@store')->name('account.doctor.register');
 
-Route::get('/user','UserController@index')->name('user.index');
+//Route::get('/user','UserController@index')->name('user.index');
 });
 
 
@@ -65,4 +70,15 @@ Route::post('','UserController@store')->name('account.user.register');
 Route::get('/account/register/doctor/store','DoctorController@store')->name('account.doctor.register');
 
 
+});
+
+
+Route::group([
+    'namespace' => 'Backend',
+    
+    'middleware' => '',
+],function () {
+
+
+    Route::get('/user','UserController@index')->name('user.index');
 });
