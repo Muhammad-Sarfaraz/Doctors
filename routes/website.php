@@ -42,6 +42,9 @@ Route::group([
     'namespace' => 'Backend',
     
 ],function () {
+    //Login
+Route::post('/account/login/post','UserController@login')->name('user.login.post');
+//Store
 Route::post('/account/register/user/store','UserController@store')->name('account.user.register');
 Route::post('/account/register/doctor/store','DoctorController@store')->name('account.doctor.register');
 

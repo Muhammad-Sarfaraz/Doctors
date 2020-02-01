@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use App\GeneralUser;
 
 class UserController extends Controller
@@ -18,6 +18,26 @@ class UserController extends Controller
     {
        return view('frontend.user.index');
     }
+
+    public function login(Request $request)
+    
+    {
+        $this->validate($request,[
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|max:255',
+        ]);
+
+
+            if(Auth::attempt(['email' =>$request->email, 'password' => $request->password]))
+            {
+                        echo "Done";
+            }else{
+                echo "Error";
+            }
+
+      // print_r($request->all());
+    }
+
 
     /**
      * Show the form for creating a new resource.
