@@ -33,4 +33,4 @@ GNU General Public License v3.0
     
 ## Credits
 
-* Sarfara Muhammad Sajib
+* Sarfaraz Muhammad Sajib
