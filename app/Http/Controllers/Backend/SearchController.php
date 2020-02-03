@@ -5,18 +5,38 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Doctor;
+use DB;
 
-class DoctorController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+
     {
-        //
-    }
+        //echo "Found";
+        //print_r($request->except('_token'));
+        $keywords=$request->keywords;
+    //     $user = 
+    //     Doctor::where('specialization','%'.$keywords.'%')->orWhere('specialization','%'.$keywords.'%')->get();
+    // if(count($user) > 0){
+    //     echo "Found";
+    // }
+    //   //  return view('welcome')->withDetails($user)->withQuery ( $q );
+    $search = DB::table('doctors')->where('specialization','=',$keywords)->get();
+
+    //print_r($search);
+    
+        return view('search.index',compact('search'));
+    
+     
+    
+
+
+}
 
     /**
      * Show the form for creating a new resource.
@@ -25,23 +45,9 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view ('backend.doctor.add');
+        //
     }
 
-
-
-
-
-
-    public function validation($request)
-   {
-    return $this->validate($request,[
-        'name' => 'required|max:255',
-        'email' => 'required|email|unique:users|max:255',
-        'password' => 'required|max:255',
-    ]);
-
-   }
     /**
      * Store a newly created resource in storage.
      *
@@ -50,33 +56,8 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $this->validation($request);
-        //print_r($request->all());
-        $data = new Doctor;
-
-        $data->name=$request->name;
-        $data->email=$request->email;
-        $data->password=bcrypt($request->password);
-        $data->city=$request->city;
-        $data->type=$request->type;
-        $data->gender=$request->gender;
-        $data->experience=$request->experience;
-        $data->affiliation=$request->affiliation;
-        $data->phone=$request->phone;
-        $data->institute=$request->institute;
-        $data->specialization=$request->specialization;
-       
-        $data->save();
-
-        return back()->with('status','Successfully Registered!');
-
-
-        
+        //
     }
-
-
-
 
     /**
      * Display the specified resource.

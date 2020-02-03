@@ -34,7 +34,7 @@
 						@endif
 					<div class="box_form">
 						<div id="message-register"></div>
-						<form method="post" action="{{route('account.doctor.register')}}" method="post" enctype="multipart/form-data">
+						<form method="post" action="{{route('doctor.store')}}" method="post" enctype="multipart/form-data">
 						@csrf	
 						
 						<div class="row">
@@ -53,6 +53,13 @@
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Type" name="type"  required>
+									</div>
+								</div>
+							</div>
 							<!-- /row -->
 							<div class="row">
 								<div class="col-md-6">
@@ -65,8 +72,8 @@
 									<div class="form-group">
 										<select class="form-control" name="gender"  required >
 											<option value="">Gender</option>
-											<option value="Europe">Male</option>
-											<option value="Asia">Female</option>
+											<option value="male">Male</option>
+											<option value="female">Female</option>
 										</select>
 									</div>
 								</div>

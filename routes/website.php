@@ -81,4 +81,15 @@ Route::group([
 
 
     Route::get('/user','UserController@index')->name('user.index');
+
+
+    //Search
+    Route::post('/search','SearchController@index')->name('search.index');
+    // Route::any('/search',function(){
+    //     $q = Input::get ( 'keywords' );
+
+    //     echo $q;
+    // })->name('search.index');
+    Route::post('/doctor/store','DoctorController@store')->name('doctor.store');
+
 });

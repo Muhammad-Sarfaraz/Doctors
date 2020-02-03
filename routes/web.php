@@ -38,7 +38,7 @@ Route::get('/home','HomeController@index')->name('dashboard');
 //Doctor Routes
 Route::get('/doctor','DoctorController@index')->name('doctor.index');
 Route::get('/doctor/create','DoctorController@create')->name('doctor.create');
-Route::post('/doctor/store','DoctorController@store')->name('doctor.store');
+
 Route::post('/doctor/show','DoctorController@show')->name('doctor.show');
 Route::get('/doctor/edit','DoctorController@edit')->name('doctor.edit');
 Route::get('/doctor/update','DoctorController@update')->name('doctor.update');

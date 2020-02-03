@@ -20,6 +20,7 @@ class CreateDoctorsTable extends Migration
             // $table->string('check')->nullable();
             $table->string('password');
             $table->string('city');
+            $table->string('type');
             $table->string('gender');
             $table->string('experience');
             $table->string('phone');

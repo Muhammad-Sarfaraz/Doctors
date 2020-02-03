@@ -8,11 +8,12 @@
 			<p>
 				Find the right doctor. Get the best care.
 			</p>
-			<form method="post" action="list.html">
+			<form method="post" action="{{route('search.index')}}" enctype="multipart/form-data">
+				@csrf
 				<div id="custom-search-input">
 					<div class="input-group">
-						<input type="text" class=" search-query" placeholder="Ex. Name, Specialization, conditions or procedures ....">
-						<input type="submit" class="btn_search" value="Search">
+						<input type="text" class=" search-query" name="keywords" placeholder="Ex. Name, Specialization, conditions or procedures ....">
+						<input type="submit" class="btn_search"  value="Search">
 					</div>
 					<ul>
 						<li>
