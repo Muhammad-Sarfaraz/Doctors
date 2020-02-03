@@ -17,15 +17,24 @@ class UserController extends Controller
      */
     public function index()
     {
-       return view('user.index');
+
+        $data= GeneralUser::all();
+       return view('user.index',compact('data'));
+       
+
+
     }
 
 
 
 
     public function login(Request $request)
+
+    
     
     {
+        
+
         $this->validate($request,[
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|max:255',
@@ -34,7 +43,9 @@ class UserController extends Controller
 
             if(Auth::guard('GeneralUser')->attempt(['email' =>$request->email, 'password' => $request->password]))
             {
-                return redirect()->intended('/user');
+                //return redirect()->intended('/user')->with(compact,'image');
+               // return view('user.index',compact('data'));
+               return redirect()->intended('/user');
             }else{
                 echo "Error";
             }

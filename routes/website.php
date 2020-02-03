@@ -76,7 +76,7 @@ Route::get('/account/register/doctor/store','DoctorController@store')->name('acc
 Route::group([
     'namespace' => 'Backend',
     
-    'middleware' => '',
+    
 ],function () {
 
 
